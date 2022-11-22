@@ -7,13 +7,10 @@
     <title>Beer Journal</title>
     <link href="styles.css" rel="stylesheet">
 
-    <h1>My Beer Journal</h1>
-    <h2>An App to Keep Track of Beers and Get Suggestions for What to Drink</h2>
-
     <nav>
 		<ol>
 	        <li class="nav"><a href="./home.html">Home</a></li>
-	        <li class="nav"><a href="./profiles.html">Beer Style Profiles</a></li>
+	        <li class="nav"><a href="./database.html">Database</a></li>
 	        <li class="nav"><a href="./suggestion.html">Recommendations</a></li>
 			
 	    </ol>
@@ -23,6 +20,6 @@
 <body>
     
 
-    <script src="home.js"></script>
+    <script src="suggestion.js"></script>
 </body>
 </html>

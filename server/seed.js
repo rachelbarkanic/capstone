@@ -1,10 +1,11 @@
-require("dotenv").config();
+require('dotenv').config();
 
 const {CONNECTION_STRING} = process.env;
-const Sequelize = require("sequelize");
+const Sequelize = require('sequelize');
+
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
-    dialect: "postgres", 
+    dialect: 'postgres', 
     dialectOptions: {
         ssl: {
             rejectUnauthorized: false
@@ -25,7 +26,7 @@ module.exports = {
             lager_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            lager_pic varbinary(max),
+            lager_pic text,
             style_id integer references beer_styles(style_id)
         );
 
@@ -33,7 +34,7 @@ module.exports = {
             ipa_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            ipa_pic varbinary(max),
+            ipa_pic text,
             style_id integer references beer_styles(style_id)
         );
 
@@ -41,7 +42,7 @@ module.exports = {
             belgian_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            belgian_pic varbinary(max),
+            belgian_pic text,
             style_id integer references beer_styles(style_id)
         );
 
@@ -49,7 +50,7 @@ module.exports = {
             wild_ales_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            wild_ale_pic varbinary(max),
+            wild_ale_pic text,
             style_id integer references beer_styles(style_id)
         );
 
@@ -57,7 +58,7 @@ module.exports = {
             porters_and_stouts_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            porter_and_stout_pic varbinary(max),
+            porter_and_stout_pic text,
             style_id integer references beer_styles(style_id)
         );
 
@@ -65,13 +66,13 @@ module.exports = {
             sours_id serial primary key,
             beer_name varchar(200),
             brewery_name varchar(200),
-            sour_pic varbinary(max),
+            sour_pic text,
             style_id integer references beer_styles(style_id)
         );
 
         create table tasting_notes (
             tasting_notes_id serial primary key,
-            note varchar(200)
+            note varchar(200),
             style_id integer references beer_styles(style_id)
         );
 

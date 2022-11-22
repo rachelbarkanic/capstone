@@ -1,0 +1,26 @@
+.nav {
+	margin-right: 2em;
+	display: inline
+}
+
+nav {
+	border-top: 2px solid rgb(192, 150, 210);
+    border-bottom: 2px solid rgb(192, 150, 210);
+}
+
+ol {
+	padding-left: 0;
+}
+
+a {
+	color: rgb(138, 101, 168);
+}
+
+a:visited {
+	color: rgb(103, 162, 234);
+}
+
+.grid-container {
+    display: grid;
+    gap: 50px;
+  }
