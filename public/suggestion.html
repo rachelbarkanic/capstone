@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beer Journal</title>
+    <title>Beer Suggestions</title>
     <link href="styles.css" rel="stylesheet">
 
+
+</head>
+<body>
     <h1>Get a Recommendation Based on Your Mood</h1>
     <h2>Or Get a Random Style Suggestion</h2>
-
+    <div id="nav-div">
     <nav>
 		<ol>
 	        <li class="nav"><a href="./home.html">Home</a></li>
@@ -18,18 +21,21 @@
 			
 	    </ol>
 	</nav>
-
+</div>
     
-
-</head>
-<body>
-
+<div id="note-select-container">
+    <h3 id="h3">I'm Feeling...</h3>
     <label for="note-select">Pick a Note:</label>
-    <select id="note-select"></select>
+    <select id="note-select"><option>select a note and click submit</option></select>
     <br>
+    <button id="submit">Submit</button>
     <br>
+</div>
+<br>
+<div id="random-beer-container">
+<h3 id="h3">I Don't Know How I Feel</h3>
     <button id="random-beer-button">Get a Random Beer Suggestion</button>
-    
+</div>    
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="suggestion.js"></script>
 </body>

@@ -17,7 +17,7 @@ app.get('/api/notes', getNotes)
 
 app.get('/api/beers/random', randomBeer)
 
-app.get('/api/beers/suggest', styleSuggestion)
+app.get('/api/beers/suggest/:id', styleSuggestion)
 
 
 app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))

@@ -1,5 +1,7 @@
+
 const noteSelect = document.querySelector('#note-select')
-const beerButton = document.getElementById("random-beer-button")
+const beerButton = document.getElementById('random-beer-button')
+const submitButton = document.getElementById('submit')
 
 const getNotes = () => {
     axios.get('http://localhost:4000/api/notes')
@@ -13,6 +15,21 @@ const getNotes = () => {
         })
 }
 
+
+
+const styleSuggestion = () => {
+    axios.get(`http://localhost:4000/api/beers/suggest/${noteSelect.value}`)
+    .then(res => {
+
+       const data = res.data.name;
+       console.log(res)
+            alert('you want to drink: ' + data)
+        })
+    }
+
+
+
+    
 const randomBeer = () => {
     axios.get('http://localhost:4000/api/beers/random')
     .then(res => {
@@ -24,4 +41,6 @@ const randomBeer = () => {
 
 
 beerButton.addEventListener('click', randomBeer)
+submitButton.addEventListener('click', styleSuggestion)
+
 getNotes()

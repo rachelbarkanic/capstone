@@ -11,13 +11,14 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 });
 
 module.exports = {
-  //show all beers in db
+  //show all beer styles in db
   getBeers: (req, res) => {
     sequelize
-      .query(`select * from beer_styles`)
+      .query(`select * from beer_styles b join tasting_notes t on b.style_id = t.style_id`)
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err));
   },
+  
 
   //get a random beer suggestion
   randomBeer: (req, res) => {
@@ -26,18 +27,22 @@ module.exports = {
       let randomIndex = Math.floor(Math.random() * beers.length);
       let randomBeer = beers[randomIndex];
 
-      res.status(200).send(randomBeer);
-    });
+      res.status(200).send(randomBeer)
+      
+    })
+    .catch((err) => console.log(err));
   },
+
 
   //get a style suggestion based on tasting note
   styleSuggestion: (req, res) => {
-    sequelize.query(`select * from beer_styles b join tasting_notes t on b.style_id = t.style_id`).then((dbRes) => {
+    sequelize.query(`select * from beer_styles b join tasting_notes t on b.style_id = t.style_id where b.style_id = ${req.params.id}`).then((dbRes) => {
         let beers = dbRes[0]
-        console.log(beers)
 
-        res.status(200).send(styleSuggestion);
+        res.status(200).send(beers[0])
+        
     })
+    .catch((err) => console.log(err));
   },
 
     getNotes: (req, res) => {
@@ -46,4 +51,6 @@ module.exports = {
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((err) => console.log(err));
   },
+
+  
 };
