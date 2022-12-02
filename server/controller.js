@@ -52,5 +52,22 @@ module.exports = {
       .catch((err) => console.log(err));
   },
 
-  
+  getEntries: (req, res) => {
+    sequelize 
+    .query(`select * from entries e join beer_styles b on e.style_id = b.style_id`)
+    .then((dbRes) => res.status(200).send(dbRes[0]))
+    .catch((err) => console.log(err));
+  },
+
+
+  addEntries: (req, res) => {
+    const {beerName, breweryName, beerPic, styleId} = req.body
+    if (!beerName || !breweryName || !beerPic) {
+      return res.sendStatus(500)
+    }
+    sequelize.query(`insert into entries(beer_name, brewery_name, beer_pic, style_id) values('${beerName}', '${breweryName}', '${beerPic}', ${styleId}); select * from entries;`)
+    .then((dbRes) => res.status(200).send(dbRes[0]))
+    .catch(() => res.sendStatus(500));
+  }
 };
+

@@ -17,7 +17,7 @@ const getStyles = () => {
                 note.className = 'note-div'
                 img.src = beer.picture
 
-                name.textContent = beer.name.toUpperCase()
+                name.textContent = beer.name
                 note.textContent = beer.note
 
                 div.append(name, img, note)
@@ -31,3 +31,4 @@ const getStyles = () => {
 
 
 getStyles()
+

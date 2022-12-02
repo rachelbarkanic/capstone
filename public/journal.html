@@ -4,28 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beer Journal</title>
+    <title>The Journal</title>
     <link href="styles.css" rel="stylesheet">
 
 </head>
 <body>
-    <h1 id="home-h1">My Beer Journal</h1>
-    <h2 id="home-h2">An App to Keep Track of Beers and Get Suggestions for What to Drink</h2>
-    <div id="nav-div">
-    <nav>
-		<ol>
-	        <li class="nav"><a href="./home.html">Home</a></li>
-	        <li class="nav"><a href="./profiles.html">Beer Style Profiles</a></li>
-            <li class="nav"><a href="./journal.html">Journal</a></li>
-	        <li class="nav"><a href="./suggestion.html">Recommendations</a></li>
-			
-	    </ol>
-	</nav>
+    <h1 id="home-h1"></h1>
+
+
+          <div class="navigation">
+            <nav>
+              <ul class="nav-type">
+                <li><a href="./home.html" class="active">Home</a></li>
+                <li><a href="./profiles.html" class="active1">Styles</a></li>
+                <li><a href="./journal.html" class="active2">Journal</a></li>
+                <li><a href="./suggestion.html" class="active3">Recommendations</a></li>
+              </ul>
+            </nav>
+          </div>
+        
+<br><br><br><br><br><br><br>
+    
+    <div id="all-entries">
+       
+        <div id="new-entry">
+            <fieldset id="field">
+                <legend>Add a New Entry</legend>
+            <form id="entry-form">
+                <label for="beer-name">Beer Name:</label><input id="beer-input" type="text">
+                <label for="brewery-name">Brewery Name:</label><input id="brewery-input" type="text">
+                <label for="beer-img">Image URL</label><input id="pic-input" type="text">
+                <br><br>
+                <label for="style-drop">Style:</label><select id="style-select"><option>Pick One</option></select>
+
+            </form>
+            <br>
+            <button id="submit-button">Submit</button>
+            </fieldset>            
+        </div>
+
+    <div id="entries-container">
+        
     </div>
-   
     </div>
-    </div>
-    </div>
+  
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="journal.js"></script>
 </body>
 </html>
