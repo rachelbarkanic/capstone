@@ -117,7 +117,7 @@ module.exports = {
         insert into tasting_notes (note, style_id)
         values ('crisp', 1),
         ('hoppy', 2),
-        ('banana', 3),
+        ('banana/clove', 3),
         ('funky', 4),
         ('roasty', 5),
         ('tart', 6);

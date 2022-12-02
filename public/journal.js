@@ -76,9 +76,9 @@ const addEntry = (event) => {
        alert('Beer successfully added!')
         })
         .catch(() => {
-            alert('Looks like some information is missing')
+            alert('Looks like some information is missing...')
         })
-
+        document.location.reload()
 }
 
 getEntries()

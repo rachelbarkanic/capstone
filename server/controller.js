@@ -54,7 +54,7 @@ module.exports = {
 
   getEntries: (req, res) => {
     sequelize 
-    .query(`select * from entries e join beer_styles b on e.style_id = b.style_id`)
+    .query(`select * from entries e join beer_styles b on e.style_id = b.style_id;`)
     .then((dbRes) => res.status(200).send(dbRes[0]))
     .catch((err) => console.log(err));
   },

@@ -8,6 +8,9 @@ const getNotes = () => {
         .then(res => {
             res.data.forEach(note => {
                 const option = document.createElement('option')
+
+                option.className = 'opt'
+                
                 option.setAttribute('value', note['style_id'])
                 option.textContent = note.note
                 noteSelect.appendChild(option)
