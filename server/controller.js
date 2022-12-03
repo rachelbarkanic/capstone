@@ -52,6 +52,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
 
+  //get all entries in journal
   getEntries: (req, res) => {
     sequelize 
     .query(`select * from entries e join beer_styles b on e.style_id = b.style_id;`)
@@ -59,7 +60,7 @@ module.exports = {
     .catch((err) => console.log(err));
   },
 
-
+  //add a new entry to the journal
   addEntries: (req, res) => {
     const {beerName, breweryName, beerPic, styleId} = req.body
     if (!beerName || !breweryName || !beerPic) {

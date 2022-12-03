@@ -28,11 +28,11 @@ const getEntries = () => {
 
                 img.src = beer.beer_pic
                 
-                beerName.textContent = beer.beer_name
-                breweryName.textContent = beer.brewery_name
-                style.textContent = beer.name
+                beerName.textContent = `Beer: ${beer.beer_name}`
+                breweryName.textContent = `Brewery: ${beer.brewery_name}`
+                style.textContent = `Style: ${beer.name}`
 
-                div.append(beerName, breweryName, img, style)
+                div.append(img, beerName, breweryName, style)
                 
                 gridCont.appendChild(div)
             })

@@ -21,7 +21,7 @@ const getStyles = () => {
                 img.src = beer.picture
 
                 name.textContent = beer.name
-                note.textContent = `I taste like: ${beer.note}`
+                note.textContent = `Tastes like: ${beer.note}`
              
 
                 div.append(name, br, img, note)
